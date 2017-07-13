@@ -1,0 +1,15 @@
+section{
+  border: 5px groove green;
+}
+.big{
+  font-size: 50px;
+  padding: 30px;
+}
+.colorful{
+  border: 5px groove darksalmon;
+  background-color: chartreuse;
+  color: rebeccapurple;
+}
+.comic{
+  font-family: "Comic Sans MS",cursive;
+}

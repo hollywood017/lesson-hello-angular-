@@ -1,3 +1,43 @@
-<p>
-  directives-example works!
-</p>
+<section>
+  <h3>Directives Examples</h3>
+
+  <button (click)="buttonA()">Toggle Size</button>
+  <button (click)="buttonB()">Toggle Color</button>
+  <button (click)="buttonC()">Toggle Font</button>
+            <!-- "big" is the class name
+                    |   "isBigSize" is the variable name
+                    |         |                           -->
+  <div [ngClass]="{big: isBigSize, colorful: hasColor, comic: isComic}">
+    <p>Waistcoat forage subway tile shoreditch gluten-free, enamel pin pour-over pug. </p>
+  </div>
+
+
+
+  <select [(ngModel)]="dropdownSelection">
+    <option value="">Choose Your Pizza Style</option>
+    <option value="nyc">New York</option>
+    <option value="deep">Deep Dish</option>
+    <option value="thin">Thin Crust</option>
+    <option value="wood">Wood Oven</option>
+    <option value="chicago">Chicago</option>
+  </select>
+
+  <div [ngSwitch]="dropdownSelection">
+    <div *ngSwitchCase="'nyc'">
+      <img src="https://media.giphy.com/media/xT9DPyXuYqhFtmdTFu/giphy.gif">
+    </div>
+
+    <div *ngSwitchCase="'deep'">
+      <img src="https://media.giphy.com/media/bguSbMBFt3JHa/giphy.gif">
+    </div>
+
+    <div *ngSwitchCase="'thin'">
+      <img src="https://media.giphy.com/media/8fwQ9964hwWeA/giphy.gif">
+    </div>
+
+    <div *ngSwitchDefault>
+      <h4>Cool, I guess.</h4>
+    </div>
+
+  </div>
+</section>
