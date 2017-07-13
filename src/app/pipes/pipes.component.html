@@ -1,0 +1,24 @@
+<section>
+  <h3>Pipes Component</h3>
+
+  <input type="text" [(ngModel)]="randomText" placeholder="Blah blah blah">
+
+
+  <p>{{ randomText | uppercase }}</p>
+  <p>{{ randomText | lowercase }}</p>
+
+  <p>{{ randomText | capitalize }}</p>
+  <p>{{ randomText | emojify }}</p>
+
+  <label for="morty-search">Search for your Morty</label>
+  <input id=""morty-search" type="text" [{ngModel}]= "mortySearchText">
+  <ul>
+    <li *ngFor="let oneMorty of mortyArray">
+      <h4>{{oneMorty.name}}</h4>
+    </li>
+  </ul>
+
+
+  <p>Right now its {{ rightNow | date:'h:mm a on dd/MM/yyyy' | lowercase}}.</p>
+  <button (click)="addOneHour()">Add an hour</button>
+</section>
