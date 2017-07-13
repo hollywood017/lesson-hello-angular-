@@ -11,14 +11,16 @@
   <p>{{ randomText | emojify }}</p>
 
   <label for="morty-search">Search for your Morty</label>
-  <input id=""morty-search" type="text" [{ngModel}]= "mortySearchText">
+  <input id="morty-search" type="search" [(ngModel)] = "mortySearchText">
+
   <ul>
-    <li *ngFor="let oneMorty of mortyArray">
-      <h4>{{oneMorty.name}}</h4>
+    <li *ngFor="let oneMorty of (mortyArray | doTheSearch:mortySearchText)">
+      <h4>{{ oneMorty.name}}</h4>
+      <img [src]="oneMorty.pictureUrl">
     </li>
   </ul>
 
 
-  <p>Right now its {{ rightNow | date:'h:mm a on dd/MM/yyyy' | lowercase}}.</p>
+  <p> Right now its {{ rightNow | date:'dd/MM/yyyy' | lowercase}}. </p>
   <button (click)="addOneHour()">Add an hour</button>
 </section>
